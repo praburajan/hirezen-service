@@ -4,7 +4,6 @@ import com.hirezen.resource.user.User;
 import org.springframework.data.annotation.Id;
 
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 /**

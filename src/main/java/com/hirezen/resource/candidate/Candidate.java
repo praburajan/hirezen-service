@@ -1,11 +1,13 @@
 package com.hirezen.resource.candidate;
 
+import com.hirezen.resource.user.Team;
 import org.springframework.data.annotation.Id;
 
 import java.util.List;
 
 /**
  * Created by praburajan on 08/06/15.
+ * Separate collection
  */
 public class Candidate {
     @Id
@@ -21,6 +23,7 @@ public class Candidate {
     private float experience; //number of years of experience
     private Status status;
     private List<Interview> interviews;
+    private Team team;
 
     public String getId() {
         return id;
@@ -116,6 +119,14 @@ public class Candidate {
 
     public void setInterviews(List<Interview> interviews) {
         this.interviews = interviews;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
     }
 
     class Salary {
