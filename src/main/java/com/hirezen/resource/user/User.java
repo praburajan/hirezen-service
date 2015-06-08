@@ -11,7 +11,7 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
-    private String team;
+    private String team; //id of the team
 
     public String getTeam() {
         return team;
