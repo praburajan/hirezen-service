@@ -1,5 +1,6 @@
 package com.hirezen.resource.activity;
 
+import com.hirezen.resource.user.User;
 import org.springframework.data.annotation.Id;
 
 import java.util.Calendar;
@@ -14,7 +15,8 @@ public class Activity {
     @Id
     private String id;
     private Calendar time;
-    private List<String> users;
+    private List<User> recipients;
+    private User updatedBy;
     private String activityType;
     private String description;
     private boolean notification;
@@ -33,14 +35,6 @@ public class Activity {
 
     public void setTime(Calendar time) {
         this.time = time;
-    }
-
-    public List<String> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<String> users) {
-        this.users = users;
     }
 
     public String getActivityType() {
@@ -65,5 +59,21 @@ public class Activity {
 
     public void setNotification(boolean notification) {
         this.notification = notification;
+    }
+
+    public List<User> getRecipients() {
+        return recipients;
+    }
+
+    public void setRecipients(List<User> recipients) {
+        this.recipients = recipients;
+    }
+
+    public User getUpdatedBy() {
+        return updatedBy;
+    }
+
+    public void setUpdatedBy(User updatedBy) {
+        this.updatedBy = updatedBy;
     }
 }
