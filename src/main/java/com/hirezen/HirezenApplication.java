@@ -32,6 +32,7 @@ public class HirezenApplication {
             public void run(String... arg0) throws Exception {
                 User prabu = new User();
                 prabu.setEmail("prabu.shanmugiah@oracle.com");
+                prabu.setPassword("welcome1");
                 prabu.setName("Prabu Rajan");
                 accountRepository.save(prabu);
             }
