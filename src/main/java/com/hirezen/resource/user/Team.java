@@ -1,6 +1,7 @@
 package com.hirezen.resource.user;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 /**
  * Created by praburajan on 08/06/15.
@@ -10,7 +11,9 @@ public class Team {
     @Id
     private String id;
     private String name;
+    @DBRef
     private User hiringManager;
+    @DBRef
     private User director;
 
     public String getId() {

@@ -2,8 +2,10 @@ package com.hirezen.resource.activity;
 
 import com.hirezen.resource.user.User;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,8 +15,11 @@ import java.util.List;
 public class Activity {
     @Id
     private String id;
-    private Calendar time;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    private Date createdDate;
+    @DBRef
     private List<User> recipients;
+    @DBRef
     private User updatedBy;
     private String activityType;
     private String description;
@@ -28,12 +33,12 @@ public class Activity {
         this.id = id;
     }
 
-    public Calendar getTime() {
-        return time;
+    public Date getCreatedDate() {
+        return createdDate;
     }
 
-    public void setTime(Calendar time) {
-        this.time = time;
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 
     public String getActivityType() {

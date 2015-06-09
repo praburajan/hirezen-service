@@ -34,7 +34,7 @@ public class HirezenApplication {
                 prabu.setEmail("prabu.shanmugiah@oracle.com");
                 prabu.setPassword("welcome1");
                 prabu.setName("Prabu Rajan");
-                accountRepository.save(prabu);
+                //accountRepository.save(prabu);
             }
         };
     }

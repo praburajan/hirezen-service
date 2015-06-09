@@ -2,7 +2,9 @@ package com.hirezen.resource.candidate;
 
 import com.hirezen.resource.user.User;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -14,8 +16,12 @@ public class Interview {
     @Id
     private String id;
     private int roundNumber;
+    @DBRef
     private User interviewer; //id of the user who did the interview
     private List<Feedback> feedback;
+    @DBRef
+    private Candidate candidate;
+    private Calendar time;
     private boolean decision;
 
     public String getId() {
@@ -56,6 +62,22 @@ public class Interview {
 
     public void setDecision(boolean decision) {
         this.decision = decision;
+    }
+
+    public Candidate getCandidate() {
+        return candidate;
+    }
+
+    public void setCandidate(Candidate candidate) {
+        this.candidate = candidate;
+    }
+
+    public Calendar getTime() {
+        return time;
+    }
+
+    public void setTime(Calendar time) {
+        this.time = time;
     }
 
     class Feedback {

@@ -2,6 +2,7 @@ package com.hirezen.resource.candidate;
 
 import com.hirezen.resource.user.Team;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.util.List;
 
@@ -21,8 +22,11 @@ public class Candidate {
     private Salary salaryDetails;
     private int noticePeriod;
     private float experience; //number of years of experience
+    @DBRef
     private Status status;
+    @DBRef
     private List<Interview> interviews;
+    @DBRef
     private Team team;
 
     public String getId() {

@@ -1,6 +1,7 @@
 package com.hirezen.resource.user;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 /**
  * Created by praburajan on 08/06/15.
@@ -11,6 +12,7 @@ public class User {
     private String name;
     private String email;
     private String password;
+    @DBRef
     private Team team; //id of the team
 
     public Team getTeam() {

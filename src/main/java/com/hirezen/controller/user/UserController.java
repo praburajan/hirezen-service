@@ -22,9 +22,19 @@ public class UserController {
         return repo.findAll();
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "{id}")
+    public User getUser(@PathVariable String id) {
+        return repo.findOne(id);
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     public User create(@RequestBody User user) {
-        return repo.save(user);
+        User find = repo.findByEmail(user.getEmail());
+        User created = null;
+        if(find == null) {
+            created = repo.save(user);
+        }
+        return created;
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "{id}")
