@@ -3,6 +3,8 @@ package com.hirezen.resource.user;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
+import java.util.List;
+
 /**
  * Created by praburajan on 08/06/15.
  */
@@ -13,14 +15,15 @@ public class User {
     private String email;
     private String password;
     @DBRef
-    private Team team; //id of the team
+    private List<Team> teams;
+    private boolean verified;
 
-    public Team getTeam() {
-        return team;
+    public List<Team> getTeams() {
+        return teams;
     }
 
-    public void setTeam(Team team) {
-        this.team = team;
+    public void setTeams(List<Team> teams) {
+        this.teams = teams;
     }
 
     public String getId() {
@@ -53,5 +56,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isVerified() {
+        return verified;
+    }
+
+    public void setVerified(boolean verified) {
+        this.verified = verified;
     }
 }

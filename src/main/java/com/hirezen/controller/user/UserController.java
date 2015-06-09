@@ -55,7 +55,7 @@ public class UserController {
             toUpdate.setPassword(user.getPassword());
         }
         //TODO: set team information
-        toUpdate.setTeam(user.getTeam());
+        toUpdate.setTeams(user.getTeams());
         return repo.save(toUpdate);
     }
 }
